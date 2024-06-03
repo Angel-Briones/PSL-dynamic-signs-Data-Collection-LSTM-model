@@ -9,4 +9,4 @@ The codes developed in Python are attached. On the one hand, the "capture_sample
 ## Steps to test our neural network model based on LSTM architecture
 1. Capture the samples with capture_samples.py
 2. Generate the .h5 (keypoints) of each word or phrase with create_keypoints.py
-3. training and testing the model based on metrics with training_testing_model_loss_acc_confusionmatrix-graphs.py
+3. Training and testing the model based on metrics with training_testing_model_loss_acc_confusionmatrix-graphs.py
