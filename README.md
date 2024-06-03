@@ -1,24 +1,12 @@
-Este es un modelo de una red neuronal que traduce Lengua de Señas Peruana (LSP) a texto (y voz). Utilicé MediaPipe para obtener los puntos de la seña y para el entrenamiento usé TensorFlow y Keras.
+The codes developed in Python are attached. On the one hand, the "capture_samples" code for the capture and storage in sequence format of images (frames) of 14 dynamic signs that represent basic expressions of the PSL. Additionally, the code "kreate_keypoints" to create and save the keypoints that represent these dynamic PSL keys. On the other hand, the code "training_testing_model_loss_acc_confusionmatrix-graphs" for training and testing the model based on metrics, such as accuracy and loss graphs, as well as the use of the Confusion Matrix for precision, recall and F1-score. It was possible to obtain an LSTM model with high values ​​of accuracy, precision, recall and F1-score which allows the recognition, classification and translation in real time of dynamic sign sequences that represent 14 basic expressions of the PSL. Which in this case are: "hello", "good morning", "good afternoon", "good evening", "how are you?", "I'm fine", "I'm unwell", "more or less", " excuse me”, “please”, “can you help me”, “what time is it?”, “thank you”, and “goodbye”.
 
-## SCRIPTS PRINCIPALES
-- capture_samples.py → captura las muestras y las ubica en la carpeta frame_actions.
-- create_keypoints.py → crea los keypoints que se usarán en el entrenamiento.
-- training_model.py → entrena la red neuronal.
-- evaluate_model.py → donde se realiza la prueba de la red neuronal.
+## MAIN SCRIPTS
+- capture_samples.py → captures the samples of the 14 dynamic signs of the PSL in this case and places them in the frame_actions folder.
+- create_keypoints.py → creates and save the keypoints that represent these dynamic PSL keys.
+- model.py → to configuration of the hyperparameters of our neural network model based on LSTM architecture for evaluation of training and testing.
+- training_testing_model_loss_acc_confusionmatrix-graphs.py → for training and testing the model based on metrics, such as accuracy and loss graphs, as well as the use of the Confusion Matrix for precision, recall and F1-score.
 
-## SCRIPTS SECUNDARIOS
-- model.py → aquí se ajusta el modelo de la red neuronal.
-- constants.py → ajustes de la red neuronal.
-- helpers.py → funciones que se utilizan en los scripts principales.
-
-## Pasos para probar la red neuronal
-1. Capturar las muestras con capture_samples.py
-2. Generar los .h5 (keypoints) de cada palabra con create_keypoints.py
-3. Entrenar el modelo con training_model.py
-4. Realizar pruebas con evaluate_model.py
-
-## Observaciones
-La información que está en Data puede que no funcione para versiones diferentes de Python a la que usé en el video (3.11.3). Así que se recomienda volver a generar los keypoints.
-
-## Video de la explicación del código:
-https://youtu.be/3EK0TxfoAMk 
+## Steps to test our neural network model based on LSTM architecture
+1. Capture the samples with capture_samples.py
+2. Generate the .h5 (keypoints) of each word or phrase with create_keypoints.py
+3. training and testing the model based on metrics with training_testing_model_loss_acc_confusionmatrix-graphs.py
