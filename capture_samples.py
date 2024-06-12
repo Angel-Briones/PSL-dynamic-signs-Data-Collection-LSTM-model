@@ -33,7 +33,7 @@ def capture_samples(path, margin_frame=3, min_cant_frames=5):
             if there_hand(results):
                 count_frame += 1
                 if count_frame > margin_frame: 
-                    cv2.putText(image, 'Capturando...', FONT_POS, FONT, FONT_SIZE, (255, 50, 0))
+                    cv2.putText(image, 'Capturing...', FONT_POS, FONT, FONT_SIZE, (255, 50, 0))
                     frames.append(np.asarray(frame))
                 
             else:
@@ -46,10 +46,10 @@ def capture_samples(path, margin_frame=3, min_cant_frames=5):
                 
                 frames = []
                 count_frame = 0
-                cv2.putText(image, 'Listo para capturar...', FONT_POS, FONT, FONT_SIZE, (0,220, 100))
+                cv2.putText(image, 'Ready to capture...', FONT_POS, FONT, FONT_SIZE, (0,220, 100))
                 
             draw_keypoints(image, results)
-            cv2.imshow(f'Toma de muestras para "{os.path.basename(path)}"', image)
+            cv2.imshow(f'Taking samples for "{os.path.basename(path)}"', image)
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
 
@@ -57,6 +57,6 @@ def capture_samples(path, margin_frame=3, min_cant_frames=5):
         cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    word_name = "buenas tardes"  # CHANGE by Word/Frase in PSL (hola, como estas, bien, mal, ...)
+    word_name = "hello"  # Change by Word/Frase in PSL (hello, how are you, I'm well,...)
     word_path = os.path.join(ROOT_PATH, FRAME_ACTIONS_PATH, word_name)
     capture_samples(word_path)
