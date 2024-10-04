@@ -39,12 +39,18 @@ def evaluate_model(model, threshold=0.9):
                     count_frame = 0
                     kp_sequence = []
             
-            cv2.rectangle(image, (0,0), (640, 35), (245, 117, 16), -1)
+            TEXT_BG_COLOR = (32, 35, 217)  # Background color of the text (in this case, a type of red)
+            TEXT_BG_HEIGHT = 40  # Height of text background rectangle
+
+            # Draw a background rectangle for the text
+            cv2.rectangle(image, (0, 0), (640, TEXT_BG_HEIGHT), TEXT_BG_COLOR, -1)
+
+            # Draw text on the background
             cv2.putText(image, ' | '.join(sentence), FONT_POS, FONT, FONT_SIZE, (255, 255, 255))
             save_txt('outputs/sentences.txt', '\n'.join(sentence))
             
             draw_keypoints(image, results)
-            cv2.imshow('Traductor LSP', image)
+            cv2.imshow('Peruvian Sign Language (PSL) real-time continuous translator', image)
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
                     
